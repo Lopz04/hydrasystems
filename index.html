@@ -9,29 +9,34 @@
     <style>
         /* Variables CSS para colores y gradientes */
         :root {
-            --color-dark-bg: #0C0F1A;
-            --color-primary-blue: #00C6FF;
-            --color-secondary-purple: #9200FF;
-            --color-text-light: #E0E7FF;
-            --color-text-fade: #A0B4D0;
-            --gradient-hero: linear-gradient(90deg, #00C6FF 0%, #9200FF 100%);
-            --gradient-button: linear-gradient(45deg, #00C6FF 0%, #9200FF 100%);
-            --gradient-card-border: linear-gradient(90deg, #00C6FF, #9200FF);
+            /* Colores Neutros Oscuros */
+            --color-dark-bg: #1A1A2E; /* Fondo principal más oscuro */
+            --color-surface: #242A40; /* Superficies como tarjetas y modales */
+            --color-accent: #6C63FF; /* Color de acento, un púrpura/azul discreto */
+            --color-text-light: #EBEBFF;
+            --color-text-fade: #A0A4B8;
+
+            /* Sustitución de degradados con color plano */
+            --color-primary-link: var(--color-accent);
+            --color-button-bg: var(--color-accent);
+            --color-card-border: var(--color-accent); 
         }
 
         /* ------------------------------
-           MODO CLARO
+            MODO CLARO
         ------------------------------ */
         body.light-mode {
-            --color-dark-bg: #f5f7ff;
-            --color-primary-blue: #0066ff;
-            --color-secondary-purple: #7a00ff;
-            --color-text-light: #0c0f1a;
-            --color-text-fade: #3a3a3a;
+            /* Colores Neutros Claros */
+            --color-dark-bg: #F5F7FF;
+            --color-surface: #FFFFFF;
+            --color-accent: #4841B5; /* Un púrpura/azul más oscuro para contraste */
+            --color-text-light: #1A1A2E;
+            --color-text-fade: #5C5F74;
 
-            --gradient-hero: linear-gradient(90deg, #0066ff 0%, #7a00ff 100%);
-            --gradient-button: linear-gradient(45deg, #0066ff 0%, #7a00ff 100%);
-            --gradient-card-border: linear-gradient(90deg, #0066ff, #7a00ff);
+            /* Sustitución de degradados con color plano */
+            --color-primary-link: var(--color-accent);
+            --color-button-bg: var(--color-accent);
+            --color-card-border: var(--color-accent); 
         }
 
         /* Estilos generales */
@@ -53,12 +58,12 @@
 
         a {
             text-decoration: none;
-            color: var(--color-primary-blue);
+            color: var(--color-primary-link);
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: var(--color-secondary-purple);
+            color: var(--color-text-fade);
         }
 
         .container {
@@ -69,19 +74,19 @@
 
         /* Header */
         header {
-            background-color: rgba(12, 15, 26, 0.8);
+            background-color: var(--color-dark-bg); /* Fondo más limpio */
             padding: 20px 0;
             position: fixed;
             width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(146, 0, 255, 0.2);
+            /* backdrop-filter: blur(10px); /* Quitamos el blur para simplificar */
+            border-bottom: 1px solid rgba(108, 99, 255, 0.2);
             transition: background .4s;
         }
 
         body.light-mode header {
-            background-color: rgba(245,247,255,0.8);
-            border-bottom-color: rgba(0, 102, 255, 0.3);
+            background-color: rgba(245, 247, 255, 0.9);
+            border-bottom-color: rgba(72, 65, 181, 0.3);
         }
 
         .navbar {
@@ -98,7 +103,7 @@
         .logo {
             width: 40px;
             height: 40px;
-            background: var(--gradient-button);
+            background: var(--color-accent); /* Color sólido */
             border-radius: 50%;
             margin-right: 10px;
         }
@@ -106,9 +111,7 @@
         .logo-text {
             font-size: 1.8em;
             font-weight: 700;
-            background: var(--gradient-button);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--color-accent); /* Color de acento */
         }
 
         .nav-links a {
@@ -116,6 +119,11 @@
             font-weight: 600;
             padding: 5px 0;
             color: var(--color-text-light);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
         }
 
         .cta-button {
@@ -123,17 +131,17 @@
             font-size: 1em;
             font-weight: 600;
             color: var(--color-text-light);
-            background: var(--gradient-button);
+            background: var(--color-button-bg); /* Color sólido */
             border: none;
             border-radius: 8px;
             cursor: pointer;
             transition: all .3s;
-            box-shadow: 0 5px 20px rgba(146, 0, 255, 0.3);
+            box-shadow: 0 5px 20px rgba(108, 99, 255, 0.3); /* Sombra con el acento */
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 198, 255, 0.5);
+            box-shadow: 0 8px 30px rgba(108, 99, 255, 0.5);
         }
 
         /* Hero */
@@ -161,39 +169,51 @@
 
         .hero h1 {
             font-size: 4.5em;
-            background: var(--gradient-hero);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--color-accent); /* Color de acento */
+            margin-bottom: 20px; /* Más espacio bajo el título */
         }
 
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 40px; /* Más espacio bajo la descripción */
+            color: var(--color-text-fade);
+        }
+        
         /* Secciones */
         section {
-            padding: 100px 0;
+            padding: 120px 0; /* Aumentamos el padding para más espacio */
             position: relative;
             z-index: 5;
         }
 
         section h2 {
-            font-size: 3em;
-            background: var(--gradient-hero);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3.5em; /* Ligeramente más grande */
+            color: var(--color-accent); /* Color de acento */
+            margin-bottom: 60px; /* Más espacio bajo el título de sección */
         }
 
         /* Cards */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 50px; /* Aumentamos el espacio entre las tarjetas */
+            margin-top: 40px;
         }
 
         .service-card {
-            background-color: rgba(18, 25, 40, 0.7);
-            padding: 40px;
+            background-color: var(--color-surface); /* Fondo de superficie */
+            padding: 50px 30px; /* Aumentamos el padding interno */
             border-radius: 15px;
             position: relative;
             transition: .4s;
-            border: 1px solid transparent;
+            border: 1px solid var(--color-surface);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Alineación del texto dentro de la tarjeta */
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(108, 99, 255, 0.2);
         }
 
         .service-card::before {
@@ -201,20 +221,48 @@
             position: absolute;
             inset: 0;
             padding: 2px;
-            background: var(--gradient-card-border);
+            background: var(--color-card-border); /* Color de acento sólido */
             border-radius: inherit;
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
+            opacity: 0.15; /* Hacemos la línea de borde más sutil */
+        }
+        
+        .service-card .icon {
+            font-size: 2.5em;
+            color: var(--color-accent);
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            margin-top: 0;
+            color: var(--color-text-light);
+        }
+
+        .service-card p {
+            color: var(--color-text-fade);
         }
 
         body.light-mode .service-card {
-            background-color: rgba(255,255,255,0.4);
+            background-color: var(--color-surface);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-
+        
+        /* Ajuste de Texto en secciones */
+        #about p, #contact p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 60px; /* Aumentamos el espacio */
+            color: var(--color-text-fade);
+        }
+        
+        /* Footer */
         footer {
-            padding: 50px 0;
+            padding: 60px 0; /* Más espacio en el footer */
             font-size: .9em;
             color: var(--color-text-fade);
+            border-top: 1px solid rgba(160, 164, 184, 0.1);
         }
 
         /* Animación */
@@ -226,7 +274,6 @@
 
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="container navbar">
             <div class="logo-container">
@@ -241,14 +288,12 @@
                 <a href="#contact">Contacto</a>
             </nav>
 
-            <!-- 🚀 BOTÓN MODO CLARO -->
             <button id="theme-toggle" class="cta-button" style="margin-left:15px;">Modo Claro</button>
         </div>
     </header>
 
     <main>
 
-        <!-- HERO -->
         <section id="hero" class="hero">
             <div id="particles-js"></div>
 
@@ -261,52 +306,49 @@
             </div>
         </section>
 
-        <!-- SERVICIOS -->
         <section id="services">
             <div class="container">
                 <h2 class="fade-in">Nuestras Soluciones</h2>
 
                 <div class="services-grid">
 
-                    <div class="service-card fade-in">
+                    <div class="service-card fade-in" style="transition-delay: 0.1s;">
                         <div class="icon">&#9001;&#x2F;&#9002;</div>
                         <h3>Desarrollo Web</h3>
-                        <p>Aplicaciones rápidas, escalables y modernas.</p>
+                        <p>Diseño y desarrollo de aplicaciones web y plataformas rápidas, escalables y modernas.</p>
                     </div>
 
-                    <div class="service-card fade-in">
+                    <div class="service-card fade-in" style="transition-delay: 0.2s;">
                         <div class="icon">&#9881;</div>
                         <h3>IA y Machine Learning</h3>
-                        <p>Automatización y análisis inteligente para tu negocio.</p>
+                        <p>Implementación de modelos de inteligencia artificial para automatización y análisis inteligente de datos.</p>
                     </div>
 
-                    <div class="service-card fade-in">
+                    <div class="service-card fade-in" style="transition-delay: 0.3s;">
                         <div class="icon">&#128274;</div>
                         <h3>Ciberseguridad</h3>
-                        <p>Protege tus sistemas y datos con tecnología avanzada.</p>
+                        <p>Auditoría, consultoría y protección de sistemas y datos con tecnología de seguridad avanzada.</p>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT -->
         <section id="about">
             <div class="container">
                 <h2 class="fade-in">Quiénes Somos</h2>
-                <p class="fade-in" style="max-width:800px; margin:0 auto 40px;">
+                <p class="fade-in">
                     Hydra Systems está formada por un equipo apasionado de tres desarrolladores expertos, dedicados a transformar ideas en realidades digitales.
                 </p>
                 <a href="#contact" class="cta-button fade-in">Conoce al Equipo</a>
             </div>
         </section>
 
-        <!-- CONTACTO -->
         <section id="contact">
             <div class="container">
                 <h2 class="fade-in">¿Tienes un Proyecto en Mente?</h2>
-                <p class="fade-in" style="max-width:800px;margin:0 auto 40px;">
-                    Estamos listos para ayudarte a construir tecnología que marque la diferencia.
+                <p class="fade-in">
+                    Estamos listos para ayudarte a construir tecnología que marque la diferencia. ¡Tu visión, nuestro código!
                 </p>
                 <a href="mailto:contacto@hydrasystems.com" class="cta-button fade-in">Contáctanos</a>
             </div>
@@ -318,7 +360,6 @@
         <p>&copy; 2024 Hydra Systems. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- PARTICLES -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <script>
@@ -339,6 +380,8 @@
                         observer.unobserve(entry.target);
                     }
                 });
+            }, {
+                threshold: 0.1 // Aparecer cuando el 10% del elemento es visible
             });
 
             document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
@@ -353,17 +396,33 @@
                 document.body.classList.contains("light-mode")
                 ? "Modo Oscuro"
                 : "Modo Claro";
+                
+            // Actualizar colores de las partículas al cambiar el modo
+            const isLightMode = document.body.classList.contains("light-mode");
+            
+            // Los colores en JS deben ser los mismos que en CSS :root
+            const darkColors = ["#6C63FF", "#EBEBFF", "#A0A4B8"];
+            const lightColors = ["#4841B5", "#1A1A2E", "#5C5F74"];
+            const colorValue = isLightMode ? lightColors : darkColors;
+            const lineColor = isLightMode ? "#4841B5" : "#6C63FF";
+            
+            if (window.pJSDom && window.pJSDom.length > 0) {
+                const pJS = window.pJSDom[0].pJS;
+                pJS.particles.color.value = colorValue;
+                pJS.particles.line_linked.color = lineColor;
+                pJS.fn.particlesDraw();
+            }
         });
 
         // Partículas
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 80, "density": { "enable": true, "value_area": 800 }},
-                "color": { "value": ["#00C6FF", "#9200FF", "#E0E7FF"] },
+                "color": { "value": ["#6C63FF", "#EBEBFF", "#A0A4B8"] }, // Nuevos colores neutros/acento
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.5 },
                 "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "color": "#9200FF", "opacity": 0.4 },
+                "line_linked": { "enable": true, "color": "#6C63FF", "opacity": 0.4 }, // Líneas con color de acento
                 "move": { "enable": true, "speed": 3 }
             },
             "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
