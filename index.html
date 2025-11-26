@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hydra Systems - Innovación en Tecnología</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         /* Variables CSS para colores y gradientes */
         :root {
@@ -18,6 +19,21 @@
             --gradient-card-border: linear-gradient(90deg, #00C6FF, #9200FF);
         }
 
+        /* ------------------------------
+           MODO CLARO
+        ------------------------------ */
+        body.light-mode {
+            --color-dark-bg: #f5f7ff;
+            --color-primary-blue: #0066ff;
+            --color-secondary-purple: #7a00ff;
+            --color-text-light: #0c0f1a;
+            --color-text-fade: #3a3a3a;
+
+            --gradient-hero: linear-gradient(90deg, #0066ff 0%, #7a00ff 100%);
+            --gradient-button: linear-gradient(45deg, #0066ff 0%, #7a00ff 100%);
+            --gradient-card-border: linear-gradient(90deg, #0066ff, #7a00ff);
+        }
+
         /* Estilos generales */
         body {
             font-family: 'Poppins', sans-serif;
@@ -27,7 +43,8 @@
             color: var(--color-text-light);
             text-align: center;
             line-height: 1.6;
-            overflow-x: hidden; /* Evita scroll horizontal */
+            overflow-x: hidden;
+            transition: background-color .4s, color .4s;
         }
 
         h1, h2, h3 {
@@ -44,7 +61,6 @@
             color: var(--color-secondary-purple);
         }
 
-        /* Contenedor principal para centrar el contenido */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -58,9 +74,14 @@
             position: fixed;
             width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(10px); /* Efecto de cristal */
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(146, 0, 255, 0.2);
+            transition: background .4s;
+        }
+
+        body.light-mode header {
+            background-color: rgba(245,247,255,0.8);
+            border-bottom-color: rgba(0, 102, 255, 0.3);
         }
 
         .navbar {
@@ -79,46 +100,22 @@
             height: 40px;
             background: var(--gradient-button);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin-right: 10px;
-            box-shadow: 0 0 15px rgba(146, 0, 255, 0.6);
-            /* Aquí iría el SVG o imagen del logo */
-            mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23fff" d="M50,0L100,25L100,75L50,100L0,75L0,25Z"/></svg>') no-repeat center; /* Placeholder para la forma del logo */
-            mask-size: cover;
         }
-        
+
         .logo-text {
             font-size: 1.8em;
             font-weight: 700;
             background: var(--gradient-button);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 8px rgba(0, 198, 255, 0.4);
         }
 
         .nav-links a {
             margin-left: 30px;
             font-weight: 600;
-            position: relative;
             padding: 5px 0;
             color: var(--color-text-light);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: var(--gradient-button);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
         }
 
         .cta-button {
@@ -130,415 +127,248 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 5px 20px rgba(146, 0, 255, 0.4);
+            transition: all .3s;
+            box-shadow: 0 5px 20px rgba(146, 0, 255, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 198, 255, 0.6);
+            box-shadow: 0 8px 30px rgba(0, 198, 255, 0.5);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding-top: 80px; /* Espacio para el header fijo */
+            flex-direction: column;
+            padding-top: 80px;
             position: relative;
-            overflow: hidden;
-            background: var(--color-dark-bg);
         }
 
         #particles-js {
             position: absolute;
             width: 100%;
             height: 100%;
-            top: 0;
-            left: 0;
             z-index: 1;
         }
 
         .hero-content {
-            position: relative;
             z-index: 2;
             padding: 0 20px;
         }
 
         .hero h1 {
             font-size: 4.5em;
-            margin-bottom: 0.2em;
             background: var(--gradient-hero);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 198, 255, 0.7);
-            line-height: 1.1;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            color: var(--color-text-fade);
-            margin-bottom: 3em;
-            max-width: 800px;
         }
 
         /* Secciones */
         section {
             padding: 100px 0;
             position: relative;
-            z-index: 5; /* Para que el contenido esté sobre las partículas */
+            z-index: 5;
         }
 
         section h2 {
             font-size: 3em;
-            margin-bottom: 60px;
             background: var(--gradient-hero);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(146, 0, 255, 0.5);
         }
 
-        /* Cards de Servicios */
+        /* Cards */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
-            margin-top: 60px;
         }
 
         .service-card {
-            background-color: rgba(18, 25, 40, 0.7); /* Fondo semi-transparente */
+            background-color: rgba(18, 25, 40, 0.7);
             padding: 40px;
             border-radius: 15px;
             position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid transparent; /* Para el borde del gradiente */
-            background-clip: padding-box; /* Crucial para el borde de gradiente */
+            transition: .4s;
+            border: 1px solid transparent;
         }
 
-        /* Borde de gradiente para las tarjetas */
         .service-card::before {
-            content: '';
+            content: "";
             position: absolute;
             inset: 0;
-            padding: 2px; /* Grosor del borde */
-            background: var(--gradient-card-border) border-box;
-            -webkit-mask: 
-                linear-gradient(#fff 0 0) content-box, 
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
+            padding: 2px;
+            background: var(--gradient-card-border);
             border-radius: inherit;
-            pointer-events: none; /* Asegura que no interfiera con clics */
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 198, 255, 0.3);
-            background-color: rgba(25, 35, 50, 0.8);
+        body.light-mode .service-card {
+            background-color: rgba(255,255,255,0.4);
         }
 
-        .service-card .icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            background: var(--gradient-button);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
-        }
-
-        .service-card h3 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            color: var(--color-primary-blue);
-        }
-
-        .service-card p {
-            color: var(--color-text-fade);
-            font-size: 1.1em;
-        }
-
-        /* Footer */
         footer {
             padding: 50px 0;
-            background-color: var(--color-dark-bg);
-            border-top: 1px solid rgba(0, 198, 255, 0.1);
+            font-size: .9em;
             color: var(--color-text-fade);
-            font-size: 0.9em;
         }
 
-        /* Animaciones (usando una clase genérica para la entrada) */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
+        /* Animación */
+        .fade-in { opacity:0; transform:translateY(20px); transition:.6s; }
+        .fade-in.appear { opacity:1; transform:translateY(0); }
 
-        .fade-in.appear {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Media Queries para responsividad */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-            }
-            .nav-links {
-                margin-top: 20px;
-            }
-            .nav-links a {
-                margin: 0 15px;
-            }
-            .hero h1 {
-                font-size: 3em;
-            }
-            .hero p {
-                font-size: 1.2em;
-            }
-            section h2 {
-                font-size: 2.5em;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            .logo-text {
-                font-size: 1.5em;
-            }
-            .cta-button {
-                padding: 10px 20px;
-                font-size: 0.9em;
-            }
-        }
     </style>
 </head>
+
 <body>
+
+    <!-- HEADER -->
     <header>
         <div class="container navbar">
             <div class="logo-container">
-                <div class="logo"></div> <span class="logo-text">Hydra Systems</span>
+                <div class="logo"></div>
+                <span class="logo-text">Hydra Systems</span>
             </div>
+
             <nav class="nav-links">
                 <a href="#hero">Inicio</a>
                 <a href="#services">Servicios</a>
                 <a href="#about">Nosotros</a>
                 <a href="#contact">Contacto</a>
             </nav>
-            <a href="#contact" class="cta-button">Empezar Proyecto</a>
+
+            <!-- 🚀 BOTÓN MODO CLARO -->
+            <button id="theme-toggle" class="cta-button" style="margin-left:15px;">Modo Claro</button>
         </div>
     </header>
 
     <main>
+
+        <!-- HERO -->
         <section id="hero" class="hero">
-            <div id="particles-js"></div> <div class="hero-content">
+            <div id="particles-js"></div>
+
+            <div class="hero-content">
                 <h1 class="fade-in">INNOVA. CREA. DOMINA.</h1>
                 <p class="fade-in" style="transition-delay: 0.2s;">
                     Impulsando el futuro de la tecnología con soluciones de software de vanguardia.
                 </p>
-                <a href="#services" class="cta-button fade-in" style="transition-delay: 0.4s;">Explorar Servicios</a>
+                <a href="#services" class="cta-button fade-in" style="transition-delay:0.4s;">Explorar Servicios</a>
             </div>
         </section>
 
-        <section id="services" class="section-padding">
+        <!-- SERVICIOS -->
+        <section id="services">
             <div class="container">
                 <h2 class="fade-in">Nuestras Soluciones</h2>
+
                 <div class="services-grid">
-                    <div class="service-card fade-in" style="transition-delay: 0.1s;">
-                        <div class="icon">&#9001;&#x2F;&#9002;</div> <h3>Desarrollo Web</h3>
-                        <p>Diseño y construcción de aplicaciones web escalables y de alto rendimiento.</p>
+
+                    <div class="service-card fade-in">
+                        <div class="icon">&#9001;&#x2F;&#9002;</div>
+                        <h3>Desarrollo Web</h3>
+                        <p>Aplicaciones rápidas, escalables y modernas.</p>
                     </div>
-                    <div class="service-card fade-in" style="transition-delay: 0.2s;">
-                        <div class="icon">&#9881;</div> <h3>IA y Machine Learning</h3>
-                        <p>Implementación de inteligencia artificial para automatización y análisis predictivo.</p>
+
+                    <div class="service-card fade-in">
+                        <div class="icon">&#9881;</div>
+                        <h3>IA y Machine Learning</h3>
+                        <p>Automatización y análisis inteligente para tu negocio.</p>
                     </div>
-                    <div class="service-card fade-in" style="transition-delay: 0.3s;">
-                        <div class="icon">&#128274;</div> <h3>Ciberseguridad</h3>
-                        <p>Protege tus activos digitales con nuestras robustas soluciones de seguridad.</p>
+
+                    <div class="service-card fade-in">
+                        <div class="icon">&#128274;</div>
+                        <h3>Ciberseguridad</h3>
+                        <p>Protege tus sistemas y datos con tecnología avanzada.</p>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section-padding" style="background-color: rgba(18, 25, 40, 0.5);">
+        <!-- ABOUT -->
+        <section id="about">
             <div class="container">
                 <h2 class="fade-in">Quiénes Somos</h2>
-                <p class="fade-in" style="max-width: 800px; margin: 0 auto 40px;">
-                    Hydra Systems está formada por un equipo apasionado de tres desarrolladores expertos, dedicados a transformar ideas en realidades digitales. Nos especializamos en crear soluciones innovadoras que impulsan el éxito de nuestros clientes.
+                <p class="fade-in" style="max-width:800px; margin:0 auto 40px;">
+                    Hydra Systems está formada por un equipo apasionado de tres desarrolladores expertos, dedicados a transformar ideas en realidades digitales.
                 </p>
-                <a href="#contact" class="cta-button fade-in" style="transition-delay: 0.2s;">Conoce al Equipo</a>
+                <a href="#contact" class="cta-button fade-in">Conoce al Equipo</a>
             </div>
         </section>
 
-        <section id="contact" class="section-padding">
+        <!-- CONTACTO -->
+        <section id="contact">
             <div class="container">
                 <h2 class="fade-in">¿Tienes un Proyecto en Mente?</h2>
-                <p class="fade-in" style="max-width: 800px; margin: 0 auto 40px;">
-                    Estamos listos para escucharte y convertir tus desafíos tecnológicos en oportunidades.
+                <p class="fade-in" style="max-width:800px;margin:0 auto 40px;">
+                    Estamos listos para ayudarte a construir tecnología que marque la diferencia.
                 </p>
-                <a href="mailto:contacto@hydrasystems.com" class="cta-button fade-in" style="transition-delay: 0.2s;">Contáctanos</a>
+                <a href="mailto:contacto@hydrasystems.com" class="cta-button fade-in">Contáctanos</a>
             </div>
         </section>
+
     </main>
-    
+
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Hydra Systems. Todos los derechos reservados.</p>
-        </div>
+        <p>&copy; 2024 Hydra Systems. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- PARTICLES -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     <script>
-        // Configuración de particles.js para el fondo del hero
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": ["#00C6FF", "#9200FF", "#E0E7FF"] /* Colores del logo */
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#9200FF", /* Color de las líneas */
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(a => {
+            a.addEventListener("click", e => {
+                e.preventDefault();
+                document.querySelector(a.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+            });
         });
 
-        // JavaScript para animaciones al hacer scroll (fade-in)
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
+        // Fade-in animaciones
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('appear');
-                        observer.unobserve(entry.target); // Dejar de observar una vez que aparece
+                        entry.target.classList.add("appear");
+                        observer.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-in').forEach(element => {
-                observer.observe(element);
             });
+
+            document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
         });
 
-        // Smooth scrolling para los enlaces de navegación
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+        // 🚀 BOTÓN DE MODO CLARO / OSCURO
+        const toggleTheme = document.getElementById("theme-toggle");
+        toggleTheme.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+            toggleTheme.textContent = 
+                document.body.classList.contains("light-mode")
+                ? "Modo Oscuro"
+                : "Modo Claro";
         });
 
+        // Partículas
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 }},
+                "color": { "value": ["#00C6FF", "#9200FF", "#E0E7FF"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "color": "#9200FF", "opacity": 0.4 },
+                "move": { "enable": true, "speed": 3 }
+            },
+            "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
+        });
     </script>
+
 </body>
 </html>
