@@ -583,3 +583,6 @@ footer {
     opacity:1; 
     transform:translateY(0); 
 }
+.team-card::before {
+    pointer-events: none;
+}
