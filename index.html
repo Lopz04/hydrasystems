@@ -1,24 +1,29 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hydra Systems</title>
-    <link rel="shortcut icon" href="src/img/hydralogo1.png"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Hydra Systems | Software a medida y plataformas escalables</title>
+    <meta name="description" content="Hydra Systems diseña, construye y opera plataformas web y empresariales con foco en rendimiento, seguridad y escalabilidad.">
+    <meta property="og:title" content="Hydra Systems | Software a medida" />
+    <meta property="og:description" content="Software seguro, rápido y listo para escalar. Desarrollo, DevOps e IA hechos a la medida." />
+    <meta property="og:image" content="src/img/hydralogo1.png" />
+    <link rel="shortcut icon" href="src/img/hydralogo1.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <header>
+    <header class="site-header">
         <div class="container navbar">
             <div class="logo-container">
-                <div class="logo"><img src="src/img/hydralogo1.png" alt="" srcset=""></div>
+                <div class="logo"><img src="src/img/hydralogo1.png" alt="Logotipo de Hydra Systems"></div>
                 <span class="logo-text">Hydra Systems</span>
             </div>
 
-            <nav class="nav-links">
+            <nav class="nav-links" aria-label="Navegación principal">
                 <a href="#hero">Inicio</a>
                 <a href="#about">Nosotros</a>
                 <a href="#services">Servicios</a>
@@ -26,358 +31,430 @@
                 <a href="#process">Proceso</a>
                 <a href="#team">Equipo</a>
                 <a href="#contact">Contacto</a>
+                <a class="nav-cta" href="#contact">Agenda una llamada</a>
             </nav>
 
-            <button class="menu-toggle" id="menu-toggle">
-                <i class="fa fa-bars"></i>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación">
+                <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
-            
-            <a href="mailto:contacto@hydrasystems.com" class="cta-button">Empezar Proyecto</a>
+
+            <a href="#contact" class="cta-button desktop-only">Agenda una llamada</a>
         </div>
     </header>
 
     <main>
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <div id="particles-js" aria-hidden="true"></div>
 
-        <section id="hero" class="hero">
-            <div id="particles-js"></div>
-
-            <div class="hero-content">
-                <h1 class="fade-in">INNOVA. CREA. DOMINA.</h1>
-                <p class="fade-in" style="transition-delay: 0.2s;">
-                    Impulsando el futuro de la tecnología con soluciones de software de vanguardia.
-                </p>
-                <a href="#portfolio" class="cta-button fade-in" style="transition-delay:0.4s;">Ver Portafolio</a>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <h2 class="fade-in">¿Quiénes Somos?</h2>
-                <p class="fade-in" style="transition-delay: 0.1s;">
-                    Somos <strong>Hydra Systems</strong>, un equipo selecto de desarrolladores expertos apasionados por la innovación. Nuestro propósito es transformar ideas ambiciosas en realidades digitales robustas y eficientes, utilizando las últimas tecnologías en desarrollo web, IA y ciberseguridad.
-                </p>
-                <a href="#contact" class="cta-button fade-in" style="transition-delay: 0.2s;">Hablemos de tu idea</a>
-            </div>
-        </section>
-
-       <section id="services">
-            <div class="container">
-                <h2 class="fade-in">Soluciones de Software a Medida</h2>
-
-                <div class="services-grid">
-
-                    <div class="service-card fade-in" style="transition-delay: 0.1s;">
-                        <div class="icon"><i class="fas fa-search-dollar"></i></div>
-                        <h3>Análisis y Optimización de Procesos</h3>
-                        <p>Identificamos y analizamos los cuellos de botella en su empresa. Creamos una <strong>estrategia de automatización</strong> detallada para reducir costos y aumentar la eficiencia operativa.</p>
+            <div class="container hero-grid">
+                <div class="hero-copy fade-in">
+                    <p class="eyebrow">Software a medida para operaciones críticas</p>
+                    <h1 id="hero-title">Diseñamos, construimos y operamos plataformas seguras para tu negocio.</h1>
+                    <p class="lead">Creamos experiencias web y sistemas empresariales con foco en rendimiento, seguridad y escalabilidad, acompañándote desde la idea hasta el soporte 24/7.</p>
+                    <div class="cta-group">
+                        <a href="#contact" class="cta-button">Agenda una llamada</a>
+                        <a href="#portfolio" class="cta-button ghost">Ver portafolio</a>
                     </div>
-
-                    <div class="service-card fade-in" style="transition-delay: 0.2s;">
-                        <div class="icon"><i class="fas fa-cogs"></i></div>
-                        <h3>Desarrollo de Software a la Medida</h3>
-                        <p>Construimos <strong>sistemas personalizados</strong> que se ajustan 100% a sus necesidades. Utilizamos la tecnología más adecuada (PHP, SQL, React, etc.) para asegurar funcionalidad y escalabilidad.</p>
+                    <div class="hero-stats">
+                        <article class="stat-card">
+                            <span class="stat-number">50+</span>
+                            <p class="stat-label">Proyectos productivos</p>
+                        </article>
+                        <article class="stat-card">
+                            <span class="stat-number">99.9%</span>
+                            <p class="stat-label">Disponibilidad promedio</p>
+                        </article>
+                        <article class="stat-card">
+                            <span class="stat-number">3</span>
+                            <p class="stat-label">Especialistas a tu lado</p>
+                        </article>
                     </div>
-
-                    <div class="service-card fade-in" style="transition-delay: 0.3s;">
-                        <div class="icon"><i class="fas fa-hands-helping"></i></div>
-                        <h3>Implementación y Soporte Continuo</h3>
-                        <p>Nos encargamos de la migración, instalación y capacitación de su personal. Ofrecemos <strong>mantenimiento y soporte técnico</strong> continuo para garantizar la estabilidad y el crecimiento futuro del software.</p>
-                    </div>
-
                 </div>
-            </div>
-        </section>
 
-        <section id="portfolio">
-            <div class="container">
-                <h2 class="fade-in">Portafolio Destacado</h2>
-                <p class="fade-in" style="transition-delay: 0.1s;">
-                    Una muestra de proyectos que combinan diseño de vanguardia con funcionalidad impecable.
-                </p>
-
-                <div class="portfolio-grid">
-                    <div class="demo-card fade-in" style="transition-delay: 0.2s;">
-                        <img src="src/img/simba.jpg" alt="Demo Aplicación de Inteligencia Artificial">
-                        <div class="demo-card-content">
-                            <h3>SIMBASOFT</h3>
-                            <p>Plataforma Integral que automatiza los procesos de una guarderia y permite realizar un monitoreo de las mascotas.</p>
-                            <div class="tags">
-                                <span>#SQL</span>
-                                <span>#JS</span>
-                                <span>#PHP</span>
-                            </div>
-                        </div>
+                <div class="hero-panel fade-in">
+                    <div class="panel-header">
+                        <span class="badge"><i class="fa fa-rocket" aria-hidden="true"></i> Lanzamientos sin fricción</span>
+                        <h3>Plan de acción inmediato</h3>
+                        <p>Plan técnico personalizado para lanzar tu próxima versión con confianza y trazabilidad.</p>
                     </div>
-
-                    <div class="demo-card fade-in" style="transition-delay: 0.3s;">
-                        <img src="src/img/AGENDIFY.png" alt="Demo Plataforma eCommerce">
-                        <div class="demo-card-content">
-                            <h3>AGENDIFY</h3>
-                            <p>Solución eCommerce modular de alta disponibilidad y gestión de inventario en tiempo real.</p>
-                            <div class="tags">
-                                <span>#React</span>
-                                <span>#NodeJS</span>
-                                <span>#PostgreSQL</span>
-                            </div>
-                        </div>
+                    <ul class="panel-list">
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Auditoría técnica ágil de arquitectura, seguridad y rendimiento.</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Plan de ruta en iteraciones con entregables verificables cada semana.</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Pipelines CI/CD listos para despliegues sin caídas.</li>
+                    </ul>
+                    <div class="stack-chips">
+                        <span class="chip">React / Next</span>
+                        <span class="chip">PHP / Laravel</span>
+                        <span class="chip">Node / Nest</span>
+                        <span class="chip">SQL & NoSQL</span>
+                        <span class="chip">AWS / Azure</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="team">
-            <div class="container">
-                <h2 class="fade-in">Conoce a Nuestro Equipo</h2>
-                <p class="fade-in" style="transition-delay: 0.1s;">
-                    Un equipo de tres desarrolladores expertos, cada uno liderando un área clave para garantizar el éxito de tu proyecto.
-                </p>
-                <div class="team-grid">
-
-                    <div class="team-card fade-in" style="transition-delay: 0.2s;">
-                        <img src="src/img/maxi5.png" alt="Foto max">
-                        <h3>Cristian Garcia</h3>
-                        <small>UI/UX & Arquitecto de Software</small>
-                        <p>Especialista en experiencia de usuario y diseño de sistemas escalables.</p>
-                        <div class="social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="team-card fade-in" style="transition-delay: 0.3s;">
-                        <img src="src/img/maury2.png" alt="Foto Maury">
-                        <h3>Maury Echeverria</h3>
-                        <small>Desarrollo Back-End & DevOps</small>
-                        <p>Experto en rendimiento del servidor, bases de datos y automatización de despliegues.</p>
-                        <div class="social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="team-card fade-in" style="transition-delay: 0.4s;">
-                        <img src="src/img/brayan.png" alt="Foto Brayan">
-                        <h3>Brayan Lopez</h3>
-                        <small>Front-End & Optimización Web</small>
-                        <p>Constructor de interfaces fluidas y rápidas con foco en el SEO técnico y accesibilidad.</p>
-                        <div class="social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://lopz04.github.io/HV_2/"><i class="fab fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                </div>
+        <section id="about" aria-labelledby="about-title">
+            <div class="container section-header">
+                <p class="eyebrow fade-in">Quiénes somos</p>
+                <h2 id="about-title" class="fade-in">Somos Hydra Systems</h2>
+                <p class="lead fade-in">Un equipo compacto de especialistas en producto digital, arquitectura de software, inteligencia artificial y ciberseguridad. Acompañamos a startups y empresas en la creación de plataformas confiables que crecen con tu negocio.</p>
+            </div>
+            <div class="container highlights-grid">
+                <article class="highlight-card fade-in">
+                    <h3>Entrega sin sorpresas</h3>
+                    <p>Demos semanales, tableros vivos y métricas claras para que veas el progreso en tiempo real.</p>
+                </article>
+                <article class="highlight-card fade-in" style="transition-delay:0.1s;">
+                    <h3>Arquitectura lista para escalar</h3>
+                    <p>Infraestructura en la nube, alta disponibilidad y observabilidad desde el día uno.</p>
+                </article>
+                <article class="highlight-card fade-in" style="transition-delay:0.2s;">
+                    <h3>Seguridad por defecto</h3>
+                    <p>Pruebas de penetración, cifrado y control de acceso, integrados en tu pipeline.</p>
+                </article>
             </div>
         </section>
 
-        <section id="process">
-            <div class="container">
-                <h2 class="fade-in">Nuestro Proceso Ágil</h2>
-                <p class="fade-in" style="transition-delay: 0.1s;">
-                    Trabajamos bajo un esquema que garantiza transparencia y entregas funcionales rápidas.
-                </p>
-                <div class="process-flow">
-                    <div class="process-step fade-in" style="transition-delay: 0.2s;">
-                        <div class="number">1</div>
-                        <h4>Descubrimiento</h4>
-                        <p>Definición de objetivos, alcance y especificaciones técnicas. Creación del MVP.</p>
-                    </div>
-                    <div class="process-step fade-in" style="transition-delay: 0.3s;">
-                        <div class="number">2</div>
-                        <h4>Diseño y Planificación</h4>
-                        <p>Diseño de la interfaz (UI/UX) y estructuración del sprint de desarrollo.</p>
-                    </div>
-                    <div class="process-step fade-in" style="transition-delay: 0.4s;">
-                        <div class="number">3</div>
-                        <h4>Desarrollo Iterativo</h4>
-                        <p>Codificación, pruebas continuas y reuniones diarias. Entregas semanales.</p>
-                    </div>
-                    <div class="process-step fade-in" style="transition-delay: 0.5s;">
-                        <div class="number">4</div>
-                        <h4>Lanzamiento y Soporte</h4>
-                        <p>Despliegue final en producción, optimización y soporte post-lanzamiento.</p>
-                    </div>
-                </div>
+        <section id="services" aria-labelledby="services-title">
+            <div class="container section-header">
+                <p class="eyebrow fade-in">Servicios</p>
+                <h2 id="services-title" class="fade-in">Soluciones de software a medida</h2>
+                <p class="lead fade-in">Diseñamos soluciones completas: desde la ideación y el diseño de producto hasta la puesta en producción y el soporte continuo.</p>
+            </div>
+            <div class="container services-grid">
+                <article class="service-card fade-in">
+                    <h3>Descubrimiento y estrategia</h3>
+                    <p>Entendemos tu negocio y definimos objetivos medibles.</p>
+                    <ul>
+                        <li>Talleres de alcance y priorización.</li>
+                        <li>Mapa de riesgos y plan de mitigación.</li>
+                        <li>Ruta con entregas rápidas de valor.</li>
+                    </ul>
+                </article>
+                <article class="service-card fade-in" style="transition-delay:0.1s;">
+                    <h3>Arquitectura y desarrollo</h3>
+                    <p>Construimos sistemas modernos, modulares y escalables.</p>
+                    <ul>
+                        <li>Frontend rápido y accesible.</li>
+                        <li>Backend robusto con APIs seguras.</li>
+                        <li>Bases de datos optimizadas.</li>
+                    </ul>
+                </article>
+                <article class="service-card fade-in" style="transition-delay:0.2s;">
+                    <h3>Automatización y DevOps</h3>
+                    <p>Entregas continuas y observabilidad de punta a punta.</p>
+                    <ul>
+                        <li>CI/CD con pruebas automáticas.</li>
+                        <li>Infraestructura como código y monitoreo.</li>
+                        <li>Alertas y guías de respuesta.</li>
+                    </ul>
+                </article>
+                <article class="service-card fade-in" style="transition-delay:0.3s;">
+                    <h3>IA y analítica</h3>
+                    <p>Modelos que generan valor real y decisiones más rápidas.</p>
+                    <ul>
+                        <li>Chatbots y asistentes internos.</li>
+                        <li>Modelos de predicción y scoring.</li>
+                        <li>Paneles de control y gobierno de datos.</li>
+                    </ul>
+                </article>
             </div>
         </section>
 
-        <section id="testimonials">
-            <div class="container">
-                <h2 class="fade-in">La Voz de Nuestros Clientes</h2>
-                <p class="fade-in" style="transition-delay: 0.1s;">
-                    Nuestra experiencia se mide en la satisfacción y el éxito de quienes confían en Hydra Systems.
-                </p>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card fade-in" style="transition-delay: 0.2s;">
-                        <blockquote>"El equipo de Hydra Systems no solo entregó lo prometido, sino que superó nuestras expectativas de velocidad y escalabilidad. Son el futuro."</blockquote>
-                        <footer>
-                            CEO
-                            <small>Tech Solutions S.A.</small>
-                        </footer>
+        <section id="portfolio" aria-labelledby="portfolio-title">
+            <div class="container section-header">
+                <p class="eyebrow fade-in">Portafolio</p>
+                <h2 id="portfolio-title" class="fade-in">Casos destacados</h2>
+                <p class="lead fade-in">Proyectos que combinan diseño, rendimiento y métricas de negocio.</p>
+            </div>
+            <div class="container portfolio-grid">
+                <article class="project-card fade-in">
+                    <img src="src/img/simba.jpg" alt="Captura de pantalla de SIMBASOFT" loading="lazy">
+                    <div class="project-content">
+                        <h3>SIMBASOFT</h3>
+                        <p class="result">Plataforma integral para gestión y monitoreo de mascotas en guarderías, con panel en tiempo real.</p>
+                        <div class="project-meta">
+                            <span class="tag">SQL</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">JS</span>
+                        </div>
                     </div>
-                    <div class="testimonial-card fade-in" style="transition-delay: 0.3s;">
-                        <blockquote>"Su solución de IA ha reducido nuestros tiempos de análisis en un 40%. Un servicio impecable y de gran impacto en el negocio."</blockquote>
-                        <footer>
-                            Gerente de Innovación
-                            <small>Global Finance Corp.</small>
-                        </footer>
+                </article>
+
+                <article class="project-card fade-in" style="transition-delay:0.1s;">
+                    <img src="src/img/AGENDIFY.png" alt="Captura de pantalla de AGENDIFY" loading="lazy">
+                    <div class="project-content">
+                        <h3>AGENDIFY</h3>
+                        <p class="result">Agenda y comercio electrónico modular con inventario en tiempo real y gestión de pagos segura.</p>
+                        <div class="project-meta">
+                            <span class="tag">React</span>
+                            <span class="tag">Node</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
                     </div>
-                </div>
+                </article>
+
+                <article class="project-card gradient-card fade-in" style="transition-delay:0.2s;">
+                    <div class="project-content">
+                        <h3>Hydra Control</h3>
+                        <p class="result">Suite interna para operar servicios críticos con paneles de observabilidad y respuestas automáticas.</p>
+                        <div class="project-meta">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Azure</span>
+                            <span class="tag">CI/CD</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="container">
-                <h2 class="fade-in">¿Listo para Empezar?</h2>
-                <p class="fade-in" style="transition-delay: 0.1s;">
-                    Estamos listos para tomar tu idea y convertirla en la próxima gran plataforma tecnológica.
-                </p>
-                <a href="mailto:contacto@hydrasystems.com" class="cta-button fade-in">Contáctanos Hoy Mismo</a>
+        <section id="process" aria-labelledby="process-title">
+            <div class="container section-header">
+                <p class="eyebrow fade-in">Proceso</p>
+                <h2 id="process-title" class="fade-in">Cómo trabajamos</h2>
+                <p class="lead fade-in">Iteramos contigo, entregando valor temprano y midiendo cada versión.</p>
+            </div>
+            <div class="container process-flow">
+                <article class="process-step fade-in">
+                    <span class="number">1</span>
+                    <h4>Descubrimiento</h4>
+                    <p>Entrevistas, definición de KPIs y alcance priorizado.</p>
+                </article>
+                <article class="process-step fade-in" style="transition-delay:0.1s;">
+                    <span class="number">2</span>
+                    <h4>Diseño y arquitectura</h4>
+                    <p>Diseño UX/UI, definición de APIs, seguridad y datos.</p>
+                </article>
+                <article class="process-step fade-in" style="transition-delay:0.2s;">
+                    <span class="number">3</span>
+                    <h4>Construcción iterativa</h4>
+                    <p>Iteraciones cortas, QA continuo y demostraciones semanales.</p>
+                </article>
+                <article class="process-step fade-in" style="transition-delay:0.3s;">
+                    <span class="number">4</span>
+                    <h4>Lanzamiento y soporte</h4>
+                    <p>Despliegue sin downtime, monitoreo y mejora continua.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="team" aria-labelledby="team-title">
+            <div class="container section-header">
+                <p class="eyebrow fade-in">Equipo</p>
+                <h2 id="team-title" class="fade-in">Conoce a Hydra</h2>
+                <p class="lead fade-in">Un equipo enfocado en excelencia técnica, diseño y resultados de negocio.</p>
+            </div>
+            <div class="container team-grid">
+                <article class="team-card fade-in">
+                    <img src="src/img/maxi5.png" alt="Foto de Cristian Garcia" loading="lazy">
+                    <h3>Cristian Garcia</h3>
+                    <div class="role-pill">UI/UX y Arquitectura</div>
+                    <p>Diseña experiencias centradas en el usuario y define sistemas escalables.</p>
+                    <div class="expertise-tags">
+                        <span class="pill">Sistemas de diseño</span>
+                        <span class="pill">Investigación UX</span>
+                        <span class="pill">Prototipado</span>
+                    </div>
+                    <div class="social">
+                        <a href="#" aria-label="LinkedIn de Cristian"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter de Cristian"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </article>
+
+                <article class="team-card fade-in" style="transition-delay:0.1s;">
+                    <img src="src/img/maury2.png" alt="Foto de Maury Echeverria" loading="lazy">
+                    <h3>Maury Echeverria</h3>
+                    <div class="role-pill">Backend y DevOps</div>
+                    <p>Arquitecta APIs seguras, infra en la nube y flujos CI/CD de alto rendimiento.</p>
+                    <div class="expertise-tags">
+                        <span class="pill">APIs</span>
+                        <span class="pill">Nube</span>
+                        <span class="pill">Observabilidad</span>
+                    </div>
+                    <div class="social">
+                        <a href="#" aria-label="LinkedIn de Maury"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub de Maury"><i class="fab fa-github"></i></a>
+                    </div>
+                </article>
+
+                <article class="team-card fade-in" style="transition-delay:0.2s;">
+                    <img src="src/img/brayan.png" alt="Foto de Brayan Lopez" loading="lazy">
+                    <h3>Brayan Lopez</h3>
+                    <div class="role-pill">Frontend y Performance</div>
+                    <p>Construye interfaces rápidas y accesibles, optimizadas para SEO técnico.</p>
+                    <div class="expertise-tags">
+                        <span class="pill">Ingeniería UX</span>
+                        <span class="pill">SEO</span>
+                        <span class="pill">Métricas Web Vitals</span>
+                    </div>
+                    <div class="social">
+                        <a href="#" aria-label="LinkedIn de Brayan"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://lopz04.github.io/HV_2/" aria-label="Portafolio de Brayan"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="testimonials" aria-labelledby="testimonials-title">
+            <div class="container section-header">
+                <p class="eyebrow fade-in">Testimonios</p>
+                <h2 id="testimonials-title" class="fade-in">Lo que dicen nuestros clientes</h2>
+                <p class="lead fade-in">Compromiso, velocidad y calidad en cada proyecto.</p>
+            </div>
+            <div class="container testimonials-grid">
+                <article class="testimonial-card fade-in">
+                    <blockquote>"Hydra Systems entregó en tiempo récord y con la calidad que necesitábamos para escalar en la región. Su comunicación es impecable."</blockquote>
+                    <footer>CTO <small>RetailTech LATAM</small></footer>
+                </article>
+                <article class="testimonial-card fade-in" style="transition-delay:0.1s;">
+                    <blockquote>"Automatizaron nuestros procesos críticos y redujeron incidentes en producción. Hoy tenemos visibilidad total y soporte 24/7."</blockquote>
+                    <footer>Head de Operaciones <small>Finanzas B2B</small></footer>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <div class="container section-header">
+                <p class="eyebrow fade-in">Contacto</p>
+                <h2 id="contact-title" class="fade-in">Listo para empezar</h2>
+                <p class="lead fade-in">Cuéntanos tu reto y armemos juntos el plan para tu próxima entrega.</p>
+            </div>
+            <div class="container contact-card fade-in">
+                <div class="contact-actions">
+                    <a href="mailto:contacto@hydrasystems.com" class="cta-button">Escribir correo</a>
+                    <a href="tel:+573100000000" class="cta-button ghost">Llamar ahora</a>
+                </div>
+                <div class="contact-details">
+                    <span><i class="fas fa-envelope"></i> contacto@hydrasystems.com</span>
+                    <span><i class="fas fa-phone"></i> +57 (310) 000-0000</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</span>
+                </div>
             </div>
         </section>
 
     </main>
 
-<footer class="main-footer">
-    <div class="container footer-content">
-        
-        <div class="footer-logo-area">
-            <div class="logo-container">       
-                <span class="logo-text">Hydra Systems</span>
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div>
+                <div class="logo-container">
+                    <span class="logo-text">Hydra Systems</span>
+                </div>
+                <p>Impulsamos el futuro digital con software seguro y escalable.</p>
             </div>
-            <p style="margin-top: 15px; color: var(--color-text-fade); font-size: 0.9em;">
-                Impulsando el futuro digital con soluciones robustas.
-            </p>
+            <div class="footer-links">
+                <h4>Secciones</h4>
+                <a href="#hero">Inicio</a>
+                <a href="#about">Nosotros</a>
+                <a href="#services">Servicios</a>
+                <a href="#portfolio">Portafolio</a>
+                <a href="#team">Equipo</a>
             </div>
-        
-        <div class="footer-links">
-            <h4>Navegación</h4>
-            <ul>
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Nosotros</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#portfolio">Portafolio</a></li>
-                <li><a href="#team">Equipo</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-links">
-            <h4>Soporte & Legal</h4>
-            <ul>
-                <li><a href="/faq">Preguntas Frecuentes (FAQ)</a></li>
-                <li><a href="/privacy">Política de Privacidad</a></li>
-                <li><a href="/terms">Términos y Condiciones</a></li>
-                <li><a href="/career">Trabaja con Nosotros</a></li>
-                <li><a href="/blog">Blog</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-contact">
-            <h4>Contacto</h4>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:contacto@hydrasystems.com">contacto@hydrasystems.com</a></p>
-            <p><i class="fas fa-phone"></i> <a href="tel:+573100000000">+57 (310) 000-0000</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-            
-            <div class="social-links" style="margin-top: 20px;">
-                <a href="URL_LINKEDIN" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="URL_TWITTER_X" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                <a href="URL_FACEBOOK" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="URL_INSTAGRAM" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="footer-links">
+                <h4>Recursos</h4>
+                <a href="#process">Proceso</a>
+                <a href="#testimonials">Testimonios</a>
+                <a href="mailto:contacto@hydrasystems.com">Soporte</a>
+                <a href="#contact">Agenda</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> contacto@hydrasystems.com</p>
+                <p><i class="fas fa-phone"></i> +57 (310) 000-0000</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
-        
-    </div>
-    
-    <div class="footer-bottom" style="margin-top: 20px; text-align: center; color: var(--color-text-fade); font-size: 0.9em;">
-        <p>&copy; 2025 Hydra Systems. Todos los derechos reservados.</p>
-    </div>
-</footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hydra Systems. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <script>
         // Smooth scrolling
-        document.querySelectorAll('nav a, header .cta-button').forEach(a => {
-            a.addEventListener("click", e => {
-                const targetId = a.getAttribute("href");
-                if (targetId.startsWith('#')) {
-                    e.preventDefault();
-                    document.querySelector(targetId).scrollIntoView({ behavior: "smooth" });
-                    // Cierra el menú hamburguesa después de hacer clic en un enlace
-                    const navLinks = document.querySelector(".nav-links");
-                    if (navLinks.classList.contains("active")) {
-                        navLinks.classList.remove("active");
+        document.querySelectorAll('nav a, header .cta-button, .nav-cta').forEach(link => {
+            link.addEventListener('click', event => {
+                const targetId = link.getAttribute('href');
+                if (targetId && targetId.startsWith('#')) {
+                    event.preventDefault();
+                    document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
                     }
                 }
             });
         });
 
-        // Fade-in animaciones
-        document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("appear");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1 
+        // Fade-in animations
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
             });
+        }, { threshold: 0.12 });
 
-            document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
-        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // 🍔 Toggle Menu Hamburguesa
-        const menuToggle = document.getElementById("menu-toggle");
-        const navLinks = document.querySelector(".nav-links");
-        
-        menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-            // Cambiar icono de hamburguesa a X
+        // Toggle Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
             const icon = menuToggle.querySelector('i');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         });
 
-        // 🚀 Toggle Tema Claro / Oscuro
+        // Toggle Tema Claro / Oscuro
         const toggleTheme = document.createElement('button');
-        toggleTheme.id = "theme-toggle";
-        toggleTheme.className = "cta-button";
-        toggleTheme.style.cssText = "margin-left:15px;";
-        toggleTheme.textContent = "Modo Claro";
-        document.querySelector('.navbar').appendChild(toggleTheme); // Añadir al navbar
+        toggleTheme.id = 'theme-toggle';
+        toggleTheme.className = 'cta-button ghost';
+        toggleTheme.type = 'button';
+        toggleTheme.style.marginLeft = '8px';
+        toggleTheme.textContent = 'Modo claro';
+        toggleTheme.setAttribute('aria-pressed', 'false');
+        document.querySelector('.navbar').appendChild(toggleTheme);
 
-        toggleTheme.addEventListener("click", () => {
-            document.body.classList.toggle("light-mode");
-            toggleTheme.textContent = document.body.classList.contains("light-mode") ? "Modo Oscuro" : "Modo Claro";
-                
-            // Actualizar colores de las partículas al cambiar el modo
-            const isLightMode = document.body.classList.contains("light-mode");
-            const darkColors = ["#6C63FF", "#EBEBFF", "#A0A4B8"];
-            const lightColors = ["#4841B5", "#1A1A2E", "#5C5F74"];
-            const colorValue = isLightMode ? lightColors : darkColors;
-            const lineColor = isLightMode ? "#4841B5" : "#6C63FF";
-            
+        toggleTheme.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            toggleTheme.textContent = isLight ? 'Modo oscuro' : 'Modo claro';
+            toggleTheme.setAttribute('aria-pressed', isLight.toString());
+
+            const lightColors = ['#2563eb', '#0ea5e9', '#0f172a'];
+            const darkColors = ['#5ce1e6', '#7b5bff', '#8ef3ff'];
+            const lineColor = isLight ? '#2563eb' : '#7b5bff';
+
             if (window.pJSDom && window.pJSDom.length > 0) {
                 const pJS = window.pJSDom[0].pJS;
-                pJS.particles.color.value = colorValue;
+                pJS.particles.color.value = isLight ? lightColors : darkColors;
                 pJS.particles.line_linked.color = lineColor;
-                pJS.fn.particlesDraw();
+                pJS.fn.particlesRefresh();
             }
         });
 
-        // Partículas (solo en modo oscuro al inicio)
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 }},
-                "color": { "value": ["#6C63FF", "#EBEBFF", "#A0A4B8"] }, 
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5 },
-                "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "color": "#6C63FF", "opacity": 0.4 }, 
-                "move": { "enable": true, "speed": 3 }
+        // Partículas
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 70, density: { enable: true, value_area: 900 } },
+                color: { value: ['#5ce1e6', '#7b5bff', '#8ef3ff'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.4 },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, color: '#7b5bff', opacity: 0.4 },
+                move: { enable: true, speed: 2.5 }
             },
-            "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
+            interactivity: { events: { onhover: { enable: true, mode: 'grab' } } }
         });
     </script>
 
